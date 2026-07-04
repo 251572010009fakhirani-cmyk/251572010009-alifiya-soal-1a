@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: profile-alifiya
+    ports:
+      - "8888:80"
+    environment:
+      NAMA: "Alifiya Fakhirani Hermawan"
+      NIM: "251572010009"
+      PRODI: "Sistem Informasi"
+      KAMPUS: "STMIK Tazkia"
+      MINAT: "Cloud Computing, DevOps, dan UI/UX Design"
+      ALASAN: "Saya memilih IT karena melihat potensi besar teknologi dalam mentransformasi berbagai sektor dan menciptakan solusi inovatif untuk masalah nyata, serta ingin berkontribusi dalam membangun ekosistem digital Indonesia"
+      CITA: "Menjadi Arsitek Solusi Cloud yang mampu merancang sistem infrastruktur IT yang handal dan scalable untuk mendukung transformasi digital perusahaan-perusahaan di Indonesia"
+    restart: unless-stopped
+    networks:
+      - profile-network
+
+networks:
+  profile-network:
+    driver: bridge
